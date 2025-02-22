@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Box</title>
+    <style>
+        .comment {
+            border: 2px solid blue;
+            background-color: lightblue;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1> My Awesome Comment box. Write what in your mind</h1>
+    <section>
+        <h> All Comments here </h3>
+            <div id="comment-container">
+                <p class="comment lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero eaque cum saepe
+                    rerum fuga iste eligendi nam. Minus at debitis, magnam, odio libero dolore, animi culpa quos cumque
+                    totam nulla.</p>
+                <p class="comment lorem">Dolore officiis vitae velit, fugiat ea delectus temporibus, consectetur at
+                    numquam sapiente sed molestiae voluptatem nesciunt aperiam quibusdam cum cupiditate a amet
+                    repudiandae neque aut? Rerum eius cumque beatae maiores?</p>
+                <p class="comment lorem">Voluptate, est unde facilis incidunt esse earum voluptatem nihil? Neque illum
+                    reiciendis dolor commodi. Explicabo possimus officiis non consequatur ad ex, atque minima
+                    asperiores. In odio recusandae adipisci id officiis.</p>
+            </div>
+
+         
+                <textarea name="" id="comment-text-box" cols="100%" rows="10"></textarea>
+                <br>
+                <button id="btn-post-commit">post</button>
+           
+    </section>
+    <script>
+
+        // set---1: set an event handler to the button 
+        document.getElementById('btn-post-commit').addEventListener('click', function () {
+        //    set--2 get the text written in the comment text area 
+        const cometTextBox = document.getElementById("comment-text-box");
+        const newComment = cometTextBox.value; 
+        console.log(newComment);
+
+        //  step -3 : get the paret node where to publish 
+
+        const commentContainer = document.getElementById('comment-container');
+        console.log(commentContainer); 
+
+        // step-4: create a comment p and set the innerText
+
+        const commentElement = document.createElement('p');
+        commentElement.classList.add('comment')
+        commentElement.innerText = newComment; 
+
+        // step-5: append the new p tag to the parent node 
+        commentContainer.appendChild(commentElement);
+
+        // step-6: clean the text area 
+
+        cometTextBox.value = ''; 
+        })
+    </script>
+</body>
+
+</html>
