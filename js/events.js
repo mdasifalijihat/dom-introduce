@@ -23,3 +23,10 @@ btnMakePurple.onclick = makePurple;
 function makePurple() {
   document.body.style.backgroundColor = "purple";
 }
+
+
+// option-4: addEventListener
+  // document.getElementById('').addEventListener('event type', handler)
+  document.getElementById('btn-make-green').addEventListener('click', function makeGreen(){
+    document.body.style.backgroundColor = 'green'
+})
