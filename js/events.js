@@ -30,3 +30,8 @@ function makePurple() {
   document.getElementById('btn-make-green').addEventListener('click', function makeGreen(){
     document.body.style.backgroundColor = 'green'
 })
+document.getElementById('btn-make-gold')
+.addEventListener('mouseover', function (){
+  document.body.style.backgroundColor = 'gold'
+})
+
